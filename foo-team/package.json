@@ -3,9 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
+    "start": "node --experimental-modules ./src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Konrad Cielecki",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
