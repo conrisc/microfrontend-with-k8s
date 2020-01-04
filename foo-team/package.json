@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "build": "rollup src/client.js --file dist/bundle.js --format iife",
+    "build": "rollup src/client.js --file dist/bundle.js --format iife && cpy public/* dist",
     "start": "node --experimental-modules ./src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,6 +15,7 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
+    "cpy-cli": "^3.0.0",
     "rollup": "^1.27.14"
   }
 }
