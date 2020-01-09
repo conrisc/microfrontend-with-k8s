@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "build": "rollup src/client.js --file dist/bundle.js --format iife",
-    "start": "node --experimental-modules ./src/server.js",
+    "start": "npm run build && node --experimental-modules ./src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Konrad Cielecki",
