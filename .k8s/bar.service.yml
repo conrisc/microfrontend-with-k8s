@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: bar-team
+  labels:
+    app: bar-team
+spec:
+  selector:
+    app: bar-team
+  ports:
+  - name: "3002"
+    port: 3002
+    targetPort: 3002
