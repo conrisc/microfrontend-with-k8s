@@ -1,3 +1,21 @@
-const app = document.getElementById('app');
+class BarItem extends HTMLElement {
 
-app.innerHTML = app.innerHTML + '<br>And this is part served by bar-team';
+  connectedCallback() {
+    this.log('connected');
+    this.render();
+  }
+
+  render() {
+    this.innerHTML = `<div class="sth">BarItem: Nice item</div>`;
+  }
+
+  disconnectedCallback() {
+    this.log('disconnected');
+  }
+
+  log(...args) {
+    console.log('bar-item', ...args);
+  }
+}
+
+window.customElements.define('bar-item', BarItem);

@@ -5,4 +5,8 @@ const app = express();
 
 app.use('/bar', express.static('dist'));
 
+app.get('/bar-item', (req, res) => {
+    res.send('<div class="sth">BarItem: Nice item from SSR</div>');
+});
+
 app.listen(port, () => { console.log(`Server is running on port ${port}`) });
