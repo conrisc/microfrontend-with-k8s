@@ -33,5 +33,4 @@ window.addEventListener('popstate', () => {
   rerender(window.location.pathname.substr(1));
 });
 
-$app.innerHTML = render();
 addListeners();
