@@ -2,9 +2,9 @@ import { render } from './page/render';
 
 const $app = document.getElementById('app');
 
-function rerender() {
+function rerender(option) {
     removeListeners();
-    $app.innerHTML = render();
+    $app.innerHTML = render(option);
     addListeners();
 }
 
@@ -29,10 +29,9 @@ function removeListeners() {
   ));
 }
 
+window.addEventListener('popstate', () => {
+  rerender(window.location.pathname.substr(1));
+});
+
 $app.innerHTML = render();
 addListeners();
-
-
-// window.addEventListener('popstate', () => {
-//   rerender(window.location.pathname.substr(1));
-// });

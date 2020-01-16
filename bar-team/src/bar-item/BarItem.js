@@ -1,15 +1,26 @@
 export class BarItem extends HTMLElement {
+    static get observedAttributes() {
+        return ['color'];
+    }
     connectedCallback() {
-        this.log('connected');
+        const color = this.getAttribute('color');
+        this.log('connected', color);
         this.render();
     }
 
     render() {
-        this.innerHTML = `<div class="sth">BarItem: Nice item</div>`;
+        const color = this.getAttribute('color');
+        this.innerHTML = `<div class="sth">BarItem: This item is ${color}</div>`;
     }
 
     disconnectedCallback() {
-        this.log('disconnected');
+        const color = this.getAttribute('color');
+        this.log('disconnected', color);
+    }
+
+    attributeChangedCallback(attr, oldValue, newValue) {
+        this.log('attributeChanged', attr, oldValue, newValue);
+        this.render();
     }
 
     log(...args) {

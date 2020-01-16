@@ -13,13 +13,13 @@ function renderOption(option) {
     `;
 }
 
-export function render() {
+export function render(color = options[0]) {
     return `
         <p>This is foo-team!</p>
         <div id="options">
             ${options.map(renderOption).join('')}
         </div>
-        <bar-item>
+        <bar-item color=${color}>
             <!--#include virtual="/bar-item" -->
         </bar-item>
     `;
