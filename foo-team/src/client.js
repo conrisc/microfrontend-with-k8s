@@ -1,10 +1,37 @@
+import { render } from './page/render';
+
 const $app = document.getElementById('app');
-$app.innerHTML = `
-    <p>This is foo-team!</p>
-    <bar-item>
-        <!--#include virtual="/bar-item" -->
-    </bar-item>
-`;
+
+function rerender() {
+    removeListeners();
+    $app.innerHTML = render();
+    addListeners();
+}
+
+function handleClickOption(event) {
+  event.preventDefault();
+  const option = event.currentTarget.getAttribute('color');
+  window.history.pushState(null, null, option);
+  rerender(option);
+}
+
+function addListeners() {
+  const $btns = document.getElementById('options').getElementsByTagName('a');
+  Array.prototype.forEach.call($btns, $btn => (
+    $btn.addEventListener('click', handleClickOption)
+  ));
+}
+
+function removeListeners() {
+  const $btns = document.getElementById('options').getElementsByTagName('a');
+  Array.prototype.forEach.call($btns, $btn => (
+    $btn.removeEventListener('click', handleClickOption)
+  ));
+}
+
+$app.innerHTML = render();
+addListeners();
+
 
 // window.addEventListener('popstate', () => {
 //   rerender(window.location.pathname.substr(1));
