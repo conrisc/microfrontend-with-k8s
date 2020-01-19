@@ -5,7 +5,7 @@ export class BarBasket extends HTMLElement {
     }
 
     render() {
-        this.innerHTML = `<div>Items in basket: IDK</div>`;
+        this.innerHTML = render();
     }
 
     disconnectedCallback() {
@@ -15,4 +15,8 @@ export class BarBasket extends HTMLElement {
     log(...args) {
         console.log('bar-basket', ...args);
     }
+}
+
+export function render() {
+    return `<div>Items in basket: IDK</div>`;
 }

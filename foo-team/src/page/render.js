@@ -31,7 +31,7 @@ function renderCar(car) {
     return `
         <div class="container">
             <img src="${car.image}" />
-            <div class="p-2">
+            <div class="p-2 text-center">
                 <h5>${car.name}</h5>
                 <div id="options">
                     ${cars.map(renderOption).join('')}

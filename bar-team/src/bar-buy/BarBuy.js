@@ -11,7 +11,7 @@ export class BarBuy extends HTMLElement {
 
     render() {
         const price = this.getAttribute('price');
-        this.innerHTML = `<div>Buy for $${price}</div>`;
+        this.innerHTML = render(price);
     }
 
     disconnectedCallback() {
@@ -27,4 +27,11 @@ export class BarBuy extends HTMLElement {
     log(...args) {
         console.log('bar-buy', ...args);
     }
+}
+
+
+export function render(price) {
+    return `<button class="btn">
+        Buy for $${price}
+    </button>`;
 }

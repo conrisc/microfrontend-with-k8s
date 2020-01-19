@@ -5,7 +5,7 @@ export class BarAds extends HTMLElement {
     }
 
     render() {
-        this.innerHTML = `<div>Some ads</div>`;
+        this.innerHTML = render();
     }
 
     disconnectedCallback() {
@@ -15,4 +15,8 @@ export class BarAds extends HTMLElement {
     log(...args) {
         console.log('bar-ads', ...args);
     }
+}
+
+export function render() {
+    return `<div>Some ads</div>`;
 }
