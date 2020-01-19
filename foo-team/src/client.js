@@ -4,13 +4,13 @@ const $app = document.getElementById('app');
 
 function rerender(option) {
     removeListeners();
-    $app.innerHTML = render(option);
+    $app.innerHTML = render(Number(option));
     addListeners();
 }
 
 function handleClickOption(event) {
   event.preventDefault();
-  const option = event.currentTarget.getAttribute('color');
+  const option = event.currentTarget.getAttribute('option');
   window.history.pushState(null, null, option);
   rerender(option);
 }

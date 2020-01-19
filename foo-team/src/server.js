@@ -10,9 +10,9 @@ app.set('view engine', 'ejs');
 
 app.use('/foo', express.static('dist'));
 
-app.get('/:color?', (req, res) => {
-    const { color } = req.params;
-    const html = render(color);
+app.get('/:carId?', (req, res) => {
+    const { carId } = req.params;
+    const html = render(Number(carId));
     res.render('layout', { html });
 });
 
