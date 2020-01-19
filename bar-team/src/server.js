@@ -21,7 +21,7 @@ app.get('/bar-basket', (req, res) => {
 });
 
 app.get('/bar-buy', (req, res) => {
-    res.send(renderBuy());
+    res.send(renderBuy(999999));
 });
 
 app.listen(port, () => { console.log(`Server is running on port ${port}`) });
