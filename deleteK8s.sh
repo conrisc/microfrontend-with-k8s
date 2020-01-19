@@ -1,3 +1,3 @@
 #!/bin/sh
 
-exec kubectl delete -f .k8s
+exec kubectl delete -f .k8s -R
