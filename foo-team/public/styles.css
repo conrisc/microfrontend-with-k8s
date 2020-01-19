@@ -8,16 +8,27 @@ body {
     justify-content: center;
 }
 
-.w-main {
+.main {
     width: 700px;
 }
 
-.w-sidebar {
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.sidebar {
     width: 200px;
+    border-left: 1px solid #3f3f3f;
 }
 
 .p-2 {
     padding: 5px;
+}
+
+.p-3 {
+    padding: 8px;
 }
 
 .m-2 {
@@ -60,4 +71,21 @@ img.thumbnail {
 
 #options {
     margin: 40px 20px;
+}
+
+#options a {
+    text-decoration: none;
+}
+
+.basket {
+    width: 200px;
+    color: white;
+    text-align: left;
+    padding: 0 10px;
+    height: 32px;
+    line-height: 32px;
+    border-radius: 2px;
+    margin: 5px;
+    background-color: #32da9b;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
 }

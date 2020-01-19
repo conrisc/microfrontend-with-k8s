@@ -1,3 +1,5 @@
+import { render } from './render';
+
 export class BarAds extends HTMLElement {
     connectedCallback() {
         this.log('connected');
@@ -15,8 +17,4 @@ export class BarAds extends HTMLElement {
     log(...args) {
         console.log('bar-ads', ...args);
     }
-}
-
-export function render() {
-    return `<div>Some ads</div>`;
 }

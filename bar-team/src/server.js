@@ -1,4 +1,7 @@
 import express from 'express';
+import { render as renderAds } from './bar-ads/render.js';
+import { render as renderBasket } from './bar-basket/render.js';
+import { render as renderBuy } from './bar-buy/render.js';
 
 const port = 3002;
 const app = express();
@@ -10,15 +13,15 @@ app.get('/bar-item', (req, res) => {
 });
 
 app.get('/bar-ads', (req, res) => {
-    res.send();
+    res.send(renderAds());
 });
 
 app.get('/bar-basket', (req, res) => {
-    res.send();
+    res.send(renderBasket(0));
 });
 
 app.get('/bar-buy', (req, res) => {
-    res.send();
+    res.send(renderBuy());
 });
 
 app.listen(port, () => { console.log(`Server is running on port ${port}`) });

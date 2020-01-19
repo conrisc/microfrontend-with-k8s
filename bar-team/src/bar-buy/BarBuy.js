@@ -1,12 +1,16 @@
+import { render } from './render';
+
 export class BarBuy extends HTMLElement {
     static get observedAttributes() {
         return ['price'];
     }
 
     connectedCallback() {
+        this.addItem = this.addItem.bind(this);
         const price = this.getAttribute('price');
         this.log('connected', price);
         this.render();
+        this.firstChild.addEventListener('click', this.addItem);
     }
 
     render() {
@@ -15,6 +19,7 @@ export class BarBuy extends HTMLElement {
     }
 
     disconnectedCallback() {
+        this.firstChild.removeEventListener('click', this.addItem);
         const price = this.getAttribute('price');
         this.log('disconnected', price);
     }
@@ -27,11 +32,13 @@ export class BarBuy extends HTMLElement {
     log(...args) {
         console.log('bar-buy', ...args);
     }
-}
 
-
-export function render(price) {
-    return `<button class="btn">
-        Buy for $${price}
-    </button>`;
+    addItem() {
+        const price = Number(this.getAttribute('price'));
+        this.log('event sent "bar:basket:addItem"');
+        this.dispatchEvent(new CustomEvent('bar:basket:addItem', {
+            bubbles: true,
+            detail: { price }
+        }));
+    }
 }

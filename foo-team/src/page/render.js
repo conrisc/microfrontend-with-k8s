@@ -32,7 +32,7 @@ function renderCar(car) {
         <div class="container">
             <img src="${car.image}" />
             <div class="p-2 text-center">
-                <h5>${car.name}</h5>
+                <h4>${car.name}</h4>
                 <div id="options">
                     ${cars.map(renderOption).join('')}
                 </div>
@@ -48,14 +48,16 @@ export function render(option = 1) {
     const car = cars.find(car => car.id === option) || cars[0];
     return `
         <div class="container">
-            <div class="w-main m-2 bg-2 p-2">
-                <h3>The foo store</h3>
-                <bar-basket>
-                    <!--#include virtual="/bar-basket" -->
-                </bar-basket>
+            <div class="main m-2 bg-2 p-3">
+                <div class="header">
+                    <h3>The foo store</h3>
+                    <bar-basket>
+                        <!--#include virtual="/bar-basket" -->
+                    </bar-basket>
+                </div>
                 ${renderCar(car)}
             </div>
-            <div class="w-sidebar m-2 bg-2 p-2">
+            <div class="sidebar m-2 p-3">
                 <bar-ads></bar-ads>
             </div>
         </div>
