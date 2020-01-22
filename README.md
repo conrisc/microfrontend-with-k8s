@@ -39,12 +39,12 @@ Run this command:
     `kubectl apply -f .k8s/dev`
     `kubectl apply -f .k8s`
 
-Then go to foo-team and bar-team directories and execute `npm start` in each of them.
+Then go to foo-team and bar-team directories and execute `npm start` in each of them. (Node required)
 
 Now you should have one container with nginx which is able to reach you local node servers (thanks to kuberentes services)
 Making changes in foo-team directory requires restart of the foo-team's node server (respectively for the bar-team)
 
-### Clear
+### Cean up
 To remove kubernetes deployment run one of the following commands:
     `./deleteK8s.sh`
 **or**

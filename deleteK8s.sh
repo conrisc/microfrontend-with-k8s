@@ -1,3 +1,4 @@
 #!/bin/sh
 
-exec kubectl delete -f .k8s -R
+kubectl delete -f .k8s -R
+sleep 5
