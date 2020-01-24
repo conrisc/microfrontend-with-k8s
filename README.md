@@ -4,7 +4,7 @@
 
 This repository contains sample web application build upon the microfrontend architecture (https://micro-frontends.org/)
 
-There is two separate teams who can work independently on their own part of the application:
+There are two separate teams who can work independently on their own part of the application:
  - Foo-team
  - Bar-team
  
